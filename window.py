@@ -1,24 +1,48 @@
-from PySide6 import QtCore, QtWidgets, QtGui
-from PySide6.QtWidgets import QApplication, QTableWidget, QTableWidgetItem, QTableView, QMainWindow,QLabel, QLineEdit, QVBoxLayout, QWidget
+from PyQt5 import QtCore, QtWidgets, QtGui
+from PyQt5.QtWidgets import QApplication, QTableWidget, QTableWidgetItem, QTableView, QMainWindow,QLabel, QLineEdit, QVBoxLayout, QWidget
 import sys
 
-class MainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
+from Ui_mainwindow import Ui_Sudoku
 
-        self.setWindowTitle("My App")
+class Window(QMainWindow, Ui_Sudoku):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.ui = Ui_Sudoku()
+        self.ui.setupUi(self)
+        #self.connectSignalsSlots()
 
-        self.label = QLabel()
+    def connectSignalsSlot(self):
+        #     print("Hi")
+        self.action_Close.triggered.connect(self.close)
+        self.action_Open.triggered.connect(self.open)
+        self.action_Solve.triggered.connect(self.solve)
 
-        self.input = QLineEdit()
-        self.input.textChanged.connect(self.label.setText)
+    def open():
+        print("does nothing right now")
 
-        layout = QVBoxLayout()
-        layout.addWidget(self.input)
-        layout.addWidget(self.label)
+    def solve():
+        print("Also does nothing right now")
 
-        container = QWidget()
-        container.setLayout(layout)
 
-        # Set the central widget of the Window.
-        self.setCentralWidget(container)
+
+
+#     def __init__(self):
+#         super().__init__()
+
+#         self.setWindowTitle("My App")
+
+#         self.label = QLabel()
+
+#         self.input = QLineEdit()
+#         self.input.textChanged.connect(self.label.setText)
+
+#         layout = QVBoxLayout()
+#         layout.addWidget(self.input)
+#         layout.addWidget(self.label)
+
+#         container = QWidget()
+#         container.setLayout(layout)
+
+#         # Set the central widget of the Window.
+#         self.setCentralWidget(container)
+
