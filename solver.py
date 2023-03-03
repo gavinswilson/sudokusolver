@@ -1,12 +1,9 @@
 import sys, random
 from sudoku2 import sudoku
-#from window import MainWindow
 from sudElement import sudElement
-#from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication
-# from PySide6 import QtCore, QtWidgets, QtGui
-# from PySide6.QtWidgets import QApplication, QTableWidget, QTableWidgetItem, QTableView, QMainWindow,QLabel, QLineEdit, QVBoxLayout, QWidget
 from window import Window
+
 if __name__ == "__main__":
     #puzzle = sudoku(9,"111111110222222222333333333444444444555555555666666666777777777888888888999999999", "std")
     puzzle = sudoku(9,"012340000050006041700000005000030000037684510000020000900000006380100050000058390", "std")
